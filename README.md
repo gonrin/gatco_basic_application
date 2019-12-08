@@ -15,7 +15,13 @@ postgres=#
 ```
 
 ## Step 2: Copy Skeleton Project
-pass
+
+```
+$ python3 -m venv gatco_example_application
+$ cd gatco_example_application/
+$ git clone https://github.com/gonrin/gatco_basic_application.git repo
+$ cd repo
+```
 
 ## Step 3: Configure Database Connection
 
@@ -40,7 +46,15 @@ sqlalchemy.url = postgresql://gatco_exuser:123456@localhost:5432/gatco_example_a
 ## Step 4: Install extensions.
 
 ```
-$ cd repo
 $ source ../bin/activate
 $ pip install -r requirements.txt
+```
+
+## Step 5: Run test web server
+
+```
+$ python manage.py run
+[2019-12-08 19:33:10 +0700] [41926] [INFO] Goin' Fast @ http://0.0.0.0:8000
+[2019-12-08 19:33:10 +0700] [41929] [INFO] Starting worker [41929]
+[2019-12-08 19:33:10 +0700] [41930] [INFO] Starting worker [41930]
 ```
