@@ -95,7 +95,7 @@ class User(CommonModel):
         return '<User: {}>'.format(self.id)
 ```
 
-## Step 7: Migrate Model to Database
+## Step 7: Migrate Test Model to Database
 
 ```
 $ pip install psycopg2-binary
@@ -113,4 +113,36 @@ $ alembic upgrade head
 INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
 INFO  [alembic.runtime.migration] Will assume transactional DDL.
 INFO  [alembic.runtime.migration] Running upgrade  -> 56302fe4c0f7, init
+```
+
+## Step 8: Create User API
+
+Create File application/controllers/user.py
+
+```
+from gatco.response import json, text
+from application.server import app
+from application.database import db
+from application.extensions import auth
+
+from application.models.model import User, Role
+
+@app.route("/user_test")
+async def user_test(request):
+    return text("user_test api")
+```
+
+Edit application/controllers/__init__.py
+
+```
+def init_views(app):
+    import application.controllers.user
+```
+
+Restart server and test webpage:
+
+```
+http://0.0.0.0:8090/user_test
+
+Response in webpage: user_test api
 ```

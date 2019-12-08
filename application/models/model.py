@@ -18,7 +18,7 @@ from application.database.model import CommonModel, default_uuid
 
 
 roles_users = db.Table('roles_users',
-                       db.Column('user_id', Integer, db.ForeignKey('user.id', ondelete='cascade'), primary_key=True),
+                       db.Column('user_id', Integer, db.ForeignKey('users.id', ondelete='cascade'), primary_key=True),
                        db.Column('role_id', Integer, db.ForeignKey('role.id', onupdate='cascade'), primary_key=True))
 
 

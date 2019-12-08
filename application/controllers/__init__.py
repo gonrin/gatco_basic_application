@@ -2,7 +2,7 @@
 from application.extensions import jinja
 
 def init_views(app):
-    pass
+    import application.controllers.user
 
     @app.route('/')
     def index(request):
