@@ -253,3 +253,38 @@ run command:
 $ python manage.py create_admin --password 123456789
 $ python manage.py update_admin --password 123456
 ```
+
+
+## Create login / logout API
+
+File application/controller/user.py
+
+```
+@app.route("/user/login", methods=["POST", "GET"])
+async def user_login(request):
+    param = request.json
+    user_name = param.get("user_name")
+    password = param.get("password")
+    print(user_name, password)
+    if (user_name is not None) and (password is not None):
+        user = db.session.query(User).filter(User.user_name == user_name).first()
+        if (user is not None) and auth.verify_password(password, user.password, user.salt):
+            auth.login_user(request, user)
+            return json({"id": user.id, "user_name": user.user_name})
+        return json({"error_code":"LOGIN_FAILED","error_message":"user does not exist or incorrect password"}, status=520)
+
+    else:
+        return json({"error_code": "PARAM_ERROR", "error_message": "param error"}, status=520)
+    return text("user_login api")
+
+@app.route("/user/logout", methods=["GET"])
+async def user_logout(request):
+    auth.logout_user(request)
+    return text("user_logout api")
+
+@app.route("/user/current_user", methods=["GET"])
+async def user_current_user(request):
+    user_id = auth.current_user(request)
+    print(user_id)
+    return text("current_user")
+```
