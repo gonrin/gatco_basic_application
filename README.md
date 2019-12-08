@@ -58,3 +58,10 @@ $ python manage.py run
 [2019-12-08 19:33:10 +0700] [41929] [INFO] Starting worker [41929]
 [2019-12-08 19:33:10 +0700] [41930] [INFO] Starting worker [41930]
 ```
+
+## Step 6: Design Database Model
+
+File: application/models/model.py
+```
+
+```
