@@ -24,3 +24,4 @@ ujson
 uvloop
 websockets
 passlib
+psycopg2-binary

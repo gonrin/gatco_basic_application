@@ -94,3 +94,5 @@ class User(CommonModel):
         """ Show user object info. """
         return '<User: {}>'.format(self.id)
 ```
+
+## Step 7: Migrate Model to Database
