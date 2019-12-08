@@ -20,7 +20,7 @@ manager = Manager()
 @manager.command
 def run():
     """ Starts server on port 8000. """
-    run_app(host="0.0.0.0")
+    run_app(host="0.0.0.0", port=8090)
     
 @manager.command
 def generate_schema(path = "static/js/schema", exclude = None, prettyprint = True):
