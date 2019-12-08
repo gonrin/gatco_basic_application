@@ -1,4 +1,4 @@
-### Create Database
+## Step 1: Create Database
 
 ```
 $ sudo su postgres
@@ -10,4 +10,6 @@ CREATE ROLE
 postgres=# grant all privileges on database gatco_example_app to gatco_exuser;
 GRANT
 postgres=# 
+# \q
+
 ```
