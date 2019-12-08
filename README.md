@@ -146,3 +146,27 @@ http://0.0.0.0:8090/user_test
 
 Response in webpage: user_test api
 ```
+
+## Step 9: Migrate User Model to Database:
+
+```
+$ alembic revision --autogenerate -m "add user model"
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.autogenerate.compare] Detected added table 'role'
+INFO  [alembic.autogenerate.compare] Detected added index 'ix_role_role_name' on '['role_name']'
+INFO  [alembic.autogenerate.compare] Detected added table 'users'
+INFO  [alembic.autogenerate.compare] Detected added index 'ix_users_email' on '['email']'
+INFO  [alembic.autogenerate.compare] Detected added index 'ix_users_user_name' on '['user_name']'
+INFO  [alembic.autogenerate.compare] Detected added table 'roles_users'
+  Generating /mnt/share/Documents/Projects/Python3/gonstack/gatco_basic_application/alembic/versions/99ecb5c82cdd_add_user_model.py
+  ...  done
+
+
+$ alembic upgrade head
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade 56302fe4c0f7 -> 99ecb5c82cdd, add user model
+```
+
+Check in Postgresql database, check users, role, users_roles table
