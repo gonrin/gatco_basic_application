@@ -4,7 +4,8 @@
 import sys
 from os.path import abspath, dirname
 sys.path.insert(0, dirname(abspath(__file__)))
-
+import random
+import string
 from manager import Manager
 
 from application import run_app
@@ -12,6 +13,7 @@ from application.database import db
 import sqlalchemy
 from sqlalchemy.inspection import inspect
 import json
+from application.models.model import User, Role
 
 # Constants.
 manager = Manager()
@@ -95,6 +97,43 @@ def generate_schema(path = "static/js/schema", exclude = None, prettyprint = Tru
         else:
             with open(path + '/' + classname + 'Schema.json', 'w') as outfile:
                 json.dump(schema,  outfile,)
+
+
+@manager.command
+def create_admin(password='123456'):
+    """ Create default data. """
+
+    role_admin = Role.query.filter(Role.role_name == "admin").first()
+    if(role_admin is None):
+        role_admin = Role(role_name='admin', display_name="Admin")
+        db.session.add(role_admin)
+        db.session.flush()
+    
+    role_user = Role.query.filter(Role.role_name == "user").first()
+    if(role_user is None):
+        role_user = Role(role_name='user', display_name="User")
+        db.session.add(role_user)
+        db.session.flush()
+
+
+    user = User.query.filter(User.user_name == "admin").first()
+    if user is None:
+        # create salt
+        letters = string.ascii_lowercase
+        user_salt = ''.join(random.choice(letters) for i in range(stringLength))
+        print("user_salt", user_salt)
+        # create user password
+        user_password=auth.encrypt_password(password, user_salt)
+
+        #create user
+        user = User(user_name='admin', full_name="Admin User", email="admin@gonrin.com",\
+            password=user_password, salt=user_salt)
+        
+        db.session.add(user)
+ 
+    db.session.commit()
+
+    return
 
 if __name__ == '__main__':
     manager.main()

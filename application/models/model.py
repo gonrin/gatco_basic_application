@@ -38,7 +38,9 @@ class User(CommonModel):
     user_name = db.Column(String(255), nullable=False, index=True)
     full_name = db.Column(String(255), nullable=True)
     email = db.Column(String(255), nullable=False, index=True)
-    
+    password = db.Column(String(255), nullable=False)
+    salt = db.Column(String(255), nullable=False)
+
     # Permission Based Attributes.
     is_active = db.Column(Boolean, default=True)
 

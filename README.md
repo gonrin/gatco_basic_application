@@ -170,3 +170,31 @@ INFO  [alembic.runtime.migration] Running upgrade 56302fe4c0f7 -> 99ecb5c82cdd, 
 ```
 
 Check in Postgresql database, check users, role, users_roles table
+
+## Step 10: Create admin user:
+
+File application/models/model.py
+
+```
+#User model
+    password = db.Column(String(255), nullable=False)
+    salt = db.Column(String(255), nullable=False)
+```
+Migrate to alembic
+
+```
+$ alembic revision --autogenerate -m "change user model"
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.ddl.postgresql] Detected sequence named 'role_id_seq' as owned by integer column 'role(id)', assuming SERIAL and omitting
+INFO  [alembic.ddl.postgresql] Detected sequence named 'users_id_seq' as owned by integer column 'users(id)', assuming SERIAL and omitting
+INFO  [alembic.autogenerate.compare] Detected added column 'users.password'
+INFO  [alembic.autogenerate.compare] Detected added column 'users.salt'
+  Generating
+  /mnt/share/Documents/Projects/Python3/gonstack/gatco_basic_application/alembic/versions/cbccc8f688fc_change_user_model.py ...  done
+
+$ alembic upgrade head
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade 99ecb5c82cdd -> cbccc8f688fc, change user model
+```
