@@ -6,13 +6,16 @@ from os.path import abspath, dirname
 sys.path.insert(0, dirname(abspath(__file__)))
 import random
 import string
+import sqlalchemy
+from sqlalchemy.inspection import inspect
+import json
+
 from manager import Manager
 
 from application import run_app
 from application.database import db
-import sqlalchemy
-from sqlalchemy.inspection import inspect
-import json
+
+from application.extensions import auth
 from application.models.model import User, Role
 
 # Constants.
@@ -100,6 +103,16 @@ def generate_schema(path = "static/js/schema", exclude = None, prettyprint = Tru
 
 
 @manager.command
+def update_admin(password='123456'):
+    user = User.query.filter(User.user_name == "admin").first()
+    if user is not None:
+        
+        # create user password
+        user_password=auth.encrypt_password(password, user.salt)
+        user.password = user_password
+        db.session.commit()
+        
+@manager.command
 def create_admin(password='123456'):
     """ Create default data. """
 
@@ -120,7 +133,7 @@ def create_admin(password='123456'):
     if user is None:
         # create salt
         letters = string.ascii_lowercase
-        user_salt = ''.join(random.choice(letters) for i in range(stringLength))
+        user_salt = ''.join(random.choice(letters) for i in range(64))
         print("user_salt", user_salt)
         # create user password
         user_password=auth.encrypt_password(password, user_salt)

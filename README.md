@@ -198,3 +198,58 @@ INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
 INFO  [alembic.runtime.migration] Will assume transactional DDL.
 INFO  [alembic.runtime.migration] Running upgrade 99ecb5c82cdd -> cbccc8f688fc, change user model
 ```
+
+File manage.py
+
+```
+@manager.command
+def update_admin(password='123456'):
+    user = User.query.filter(User.user_name == "admin").first()
+    if user is not None:
+        
+        # create user password
+        user_password=auth.encrypt_password(password, user.salt)
+        user.password = user_password
+        db.session.commit()
+        
+@manager.command
+def create_admin(password='123456'):
+    """ Create default data. """
+
+    role_admin = Role.query.filter(Role.role_name == "admin").first()
+    if(role_admin is None):
+        role_admin = Role(role_name='admin', display_name="Admin")
+        db.session.add(role_admin)
+        db.session.flush()
+    
+    role_user = Role.query.filter(Role.role_name == "user").first()
+    if(role_user is None):
+        role_user = Role(role_name='user', display_name="User")
+        db.session.add(role_user)
+        db.session.flush()
+
+
+    user = User.query.filter(User.user_name == "admin").first()
+    if user is None:
+        # create salt
+        letters = string.ascii_lowercase
+        user_salt = ''.join(random.choice(letters) for i in range(64))
+        print("user_salt", user_salt)
+        # create user password
+        user_password=auth.encrypt_password(password, user_salt)
+
+        #create user
+        user = User(user_name='admin', full_name="Admin User", email="admin@gonrin.com",\
+            password=user_password, salt=user_salt)
+        
+        db.session.add(user)
+ 
+    db.session.commit()
+```
+
+run command:
+
+```
+$ python manage.py create_admin --password 123456789
+$ python manage.py update_admin --password 123456
+```
