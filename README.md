@@ -96,3 +96,14 @@ class User(CommonModel):
 ```
 
 ## Step 7: Migrate Model to Database
+
+```
+$ $ pip install psycopg2-binary
+$ rm -Rf alembic/versions/
+$ mkdir alembic/versions/
+--- migrate form models to database
+$ alembic revision --autogenerate -m "init"
+
+--- create manual migrate
+$ alembic revision -m "create user table"
+```
