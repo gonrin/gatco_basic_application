@@ -101,9 +101,16 @@ class User(CommonModel):
 $ $ pip install psycopg2-binary
 $ rm -Rf alembic/versions/
 $ mkdir alembic/versions/
+
 --- migrate form models to database
 $ alembic revision --autogenerate -m "init"
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+  Generating /mnt/share/Documents/Projects/Python3/gonstack/gatco_basic_application/alembic/versions/56302fe4c0f7_init.py ...  done
 
---- create manual migrate
-$ alembic revision -m "create user table"
+$ alembic upgrade head
+
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 56302fe4c0f7, init
 ```
