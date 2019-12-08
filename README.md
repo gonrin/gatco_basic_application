@@ -98,7 +98,7 @@ class User(CommonModel):
 ## Step 7: Migrate Model to Database
 
 ```
-$ $ pip install psycopg2-binary
+$ pip install psycopg2-binary
 $ rm -Rf alembic/versions/
 $ mkdir alembic/versions/
 
