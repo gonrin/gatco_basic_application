@@ -40,6 +40,7 @@ sqlalchemy.url = postgresql://gatco_exuser:123456@localhost:5432/gatco_example_a
 ## Step 4: Install extensions.
 
 ```
+$ cd repo
 $ source ../bin/activate
 $ pip install -r requirements.txt
 ```
