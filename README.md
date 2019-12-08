@@ -13,3 +13,5 @@ postgres=#
 # \q
 
 ```
+
+## Step 2: Copy Skeleton Project

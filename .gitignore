@@ -1,0 +1,12 @@
+static/lib
+static/vendor/GonrinUI
+nohup.out
+alembic/**/__pycache__
+alembic/versions
+application/**/__pycache__
+.vscode/*
+.project
+.pydevproject
+.settings
+dump.rdb
+/**/*.DS_Store
