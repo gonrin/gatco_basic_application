@@ -18,6 +18,7 @@ define(function (require) {
             "*path":  "defaultRoute"
         },
         defaultRoute:function(){
+            console.log("defaultRoute");
         	//this.navigate("index",true);
         },
         index:function(){
