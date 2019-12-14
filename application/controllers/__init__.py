@@ -5,7 +5,8 @@ from application.extensions import jinja
 def init_views(app):
     import application.controllers.user
     import application.controllers.quocgia
-
+    import application.controllers.tinhthanh
+    
     @app.route('/')
     def index(request):
         #return text("Index")
