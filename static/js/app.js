@@ -46,9 +46,8 @@ require(['jquery', 'gonrin', 'app/router',
 			//layout: layout,
 			initialize: function () {
 				this.getRouter().registerAppRoute();
-				
 				this.getCurrentUser();
-				this.postLogin({});
+				
 			},
 			getParameterUrl: function (parameter, url) {
 				if (!url) url = window.location.href;
