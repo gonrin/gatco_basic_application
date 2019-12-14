@@ -255,7 +255,7 @@ $ python manage.py update_admin --password 123456
 ```
 
 
-## Create login / logout API
+## Step 11: Create login / logout API
 
 File application/controller/user.py
 
@@ -288,3 +288,18 @@ async def user_current_user(request):
     print(user_id)
     return text("current_user")
 ```
+
+# Client Application
+
+## Create skeleton js application
+
+## pull Vendor library
+
+```
+$ cd static/js
+$ git clone https://github.com/gonrin/GonrinJS.git lib
+$ cd ../vendor/
+$ git clone https://github.com/gonrin/GonrinUI.git
+```
+
+## Create login View
