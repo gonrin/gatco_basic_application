@@ -310,3 +310,16 @@ $ cd ../../
 ```
 $ python manage.py generate_schema
 ```
+
+
+# Sumary:
+
+- Step 1: Define model in model python
+- Step 2: Migrate to SQL
+- Step 3: Create api user apimanager
+- Step 4: Generate JS Schema 
+- Step 5: Define Nav Entry static/js/app/bases/nav/nav.js
+- Step 6: Define Route Entry in static/js/app/bases/nav/route.js
+- Step 7: Create Collection View
+- Step 8: Create Model View
+- Step 9: Create SelectDialogView
