@@ -31,7 +31,7 @@ require(['jquery', 'gonrin', 'app/router',
 		'text!app/bases/tpl/layout.html',
 		'i18n!app/nls/app'
 	],
-	function ($, Gonrin, Router, Nav, layout, lang) {
+	function ($, Gonrin, Router, NavView, layout, lang) {
 		$.ajaxSetup({
 			headers: {
 				'content-type': 'application/json'
@@ -89,10 +89,10 @@ require(['jquery', 'gonrin', 'app/router',
 				self.$header.find("span.username").html(data.fullname);
 				this.$toolbox = $('body').find(".tools-area");
 				
-				this.nav = new Nav({
+				this.navView = new NavView({
 					el: this.$navbar
 				});
-				self.nav.render();
+				self.navView.render();
 			}
 		});
 		Backbone.history.start();

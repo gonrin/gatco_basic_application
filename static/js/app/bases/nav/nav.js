@@ -15,6 +15,29 @@ define(function (require) {
 			"collectionName":"tinhthanh",
 		    "route":"tinhthanh/collection"
 		},
+		{
+			"text":"Hệ thống",
+			"icon":"fa fa-child",
+			"type": "category",
+			"entries": [
+				{
+					"text":"Người dùng",
+					"icon":"fa fa-child",
+					"type":"view",
+					"collectionName":"user",
+					"route":"user/collection"
+				},
+				{
+					"text":"Vai trò",
+					"icon":"fa fa-child",
+					"type":"view",
+					"collectionName":"user",
+					"route":"role/collection"
+				},
+			]
+		},
+
+		
 	];
 
 });
