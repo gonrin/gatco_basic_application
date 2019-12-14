@@ -45,6 +45,7 @@ require(['jquery', 'gonrin', 'app/router',
 			lang: lang,
 			//layout: layout,
 			initialize: function () {
+				console.log("Applicaiton initialize");
 				this.getRouter().registerAppRoute();
 				this.getCurrentUser();
 				
@@ -56,6 +57,7 @@ require(['jquery', 'gonrin', 'app/router',
 				return string ? string[1] : undefined;
 			},
 			getCurrentUser: function () {
+				console.log("Applicaiton getCurrentUser");
 				var self = this;
 				$.ajax({
 					url: self.serviceURL + '/user/current_user',
@@ -64,6 +66,7 @@ require(['jquery', 'gonrin', 'app/router',
 						self.postLogin(data);
 					},
 					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						console.log("Before navigate login");
 						self.router.navigate("login");
 					}
 				});

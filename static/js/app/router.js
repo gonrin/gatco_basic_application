@@ -25,6 +25,7 @@ define(function (require) {
         index:function(){
         },
         login: function () {
+            console.log("Chay login function tai router.js");
             var loginview = new Login({ el: $('body') });
             loginview.render();
         },
