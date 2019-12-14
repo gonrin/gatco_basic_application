@@ -6,7 +6,7 @@ define(function (require) {
 
 	var template = '<div style="background: #DDDDDD;" id="leftmenu" class="form-group"> <ul  class="page-navbar-menu scroll-nav clearfix" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="250">'
 		+ '<li class="navbar-toggler-wrapper"><div class="navbar-toggler"></div></li></ul></div>';
-	var navdata = require('app/bases/Nav/nav');
+	var navdata = require('app/bases/nav/nav');
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $( window ).width() <= 767;
     return Gonrin.View.extend({
     	checkUser: function(){
