@@ -315,9 +315,9 @@ $ python manage.py generate_schema
 # Sumary:
 
 - Step 1: Define model in model python
-- Step 2: Migrate to SQL
-- Step 3: Create api user apimanager
-- Step 4: Generate JS Schema 
+- Step 2: Migrate to SQL using alembic
+- Step 3: Create api with apimanager
+- Step 4: Generate JS Schema by manage.py
 - Step 5: Define Nav Entry static/js/app/bases/nav/nav.js
 - Step 6: Define Route Entry in static/js/app/bases/nav/route.js
 - Step 7: Create Collection View
