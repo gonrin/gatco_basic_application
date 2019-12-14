@@ -39,6 +39,7 @@ async def user_current_user(request):
     user = User.query.filter(User.id == user_id).first()
     if user is not None:
         print(user.full_name)
+        return json({"id": user.id, "user_name": user.user_name})
     else:
         return json({"error_code": "NOT_FOUND", "error_message": "User not found"})
     return json({"error_code": "UNKNOWN", "error_message": "Unknown error"})
