@@ -29,7 +29,7 @@ async def user_login(request):
 @app.route("/user/logout", methods=["GET"])
 async def user_logout(request):
     auth.logout_user(request)
-    return text("user_logout api")
+    return json({})
 
 @app.route("/user/current_user", methods=["GET"])
 async def user_current_user(request):
@@ -41,5 +41,5 @@ async def user_current_user(request):
         print(user.full_name)
         return json({"id": user.id, "user_name": user.user_name})
     else:
-        return json({"error_code": "NOT_FOUND", "error_message": "User not found"})
-    return json({"error_code": "UNKNOWN", "error_message": "Unknown error"})
+        return json({"error_code": "NOT_FOUND", "error_message": "User not found"}, status=520)
+    return json({"error_code": "UNKNOWN", "error_message": "Unknown error"}, status=520)
