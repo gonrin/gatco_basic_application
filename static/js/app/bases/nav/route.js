@@ -5,7 +5,7 @@ define(function (require) {
 		Gonrin = require('gonrin');
 	return [
 		{
-			"collectionName": "quocgia",
+			"collectionName": "quocgia", 
 			"route": "quocgia/collection(/:id)",
 			"$ref": "app/view/QuocGia/CollectionView",
 		},
