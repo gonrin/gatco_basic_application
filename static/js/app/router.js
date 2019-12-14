@@ -7,6 +7,7 @@ define(function (require) {
     
     var navdata = require('app/bases/nav/route');
     var LoginView = require('app/bases/views/LoginView');
+    var QuocgiaCollectionView = require('app/view/quocgia/CollectionView');
     
     return Gonrin.Router.extend({
         routes: {
@@ -16,6 +17,7 @@ define(function (require) {
 //            "forgot":"forgotPassword",
 //            "dangky":"dangky",
             "error":"error_page",
+            "quocgia/collection": "quocgia_collection",
             "*path":  "defaultRoute"
         },
         defaultRoute:function(){
@@ -23,6 +25,12 @@ define(function (require) {
         	//this.navigate("index",true);
         },
         index:function(){
+        },
+        quocgia_collection: function(){
+            var self = this;
+            console.log("quocgia collection");
+            var view = new QuocgiaCollectionView({el: self.getApp().$content});
+            view.render();
         },
         login: function () {
             console.log("Chay login function tai router.js");
