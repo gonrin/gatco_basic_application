@@ -27,7 +27,7 @@ require.config({
 });
 
 require(['jquery', 'gonrin', 'app/router',
-		'app/bases/Nav/NavbarView',
+		'app/bases/nav/NavbarView',
 		'text!app/bases/tpl/layout.html',
 		'i18n!app/nls/app'
 	],
