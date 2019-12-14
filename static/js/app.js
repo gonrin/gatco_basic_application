@@ -47,7 +47,7 @@ require(['jquery', 'gonrin', 'app/router',
 			initialize: function () {
 				this.getRouter().registerAppRoute();
 				
-				//this.getCurrentUser();
+				this.getCurrentUser();
 				this.postLogin({});
 			},
 			getParameterUrl: function (parameter, url) {
@@ -59,7 +59,7 @@ require(['jquery', 'gonrin', 'app/router',
 			getCurrentUser: function () {
 				var self = this;
 				$.ajax({
-					url: self.serviceURL + '/current_user',
+					url: self.serviceURL + '/user/current_user',
 					dataType: "json",
 					success: function (data) {
 						self.postLogin(data);
