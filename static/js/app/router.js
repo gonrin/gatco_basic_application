@@ -6,7 +6,7 @@ define(function (require) {
         Gonrin    	= require('gonrin');
     
     var navdata = require('app/bases/nav/route');
-    var Login = require('app/bases/views/LoginView');
+    var LoginView = require('app/bases/views/LoginView');
     
     return Gonrin.Router.extend({
         routes: {
@@ -26,7 +26,7 @@ define(function (require) {
         },
         login: function () {
             console.log("Chay login function tai router.js");
-            var loginview = new Login({ el: $('body') });
+            var loginview = new LoginView({ el: $('body') });
             loginview.render();
         },
         logout: function () {
