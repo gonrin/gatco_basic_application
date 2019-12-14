@@ -48,3 +48,19 @@ class User(CommonModel):
     def __repr__(self):
         """ Show user object info. """
         return '<User: {}>'.format(self.id)
+
+class QuocGia(CommonModel):
+    __tablename__ = 'quocgia'
+    id = db.Column(Integer, primary_key=True)
+    ma = db.Column(String(255), unique=True)
+    ten = db.Column(String(255), nullable=False)
+    mota = db.Column(String(255), nullable=True)
+    tinhthanh = db.relationship("TinhThanh", order_by="TinhThanh.id", cascade="all, delete-orphan")
+    
+class TinhThanh(CommonModel):
+    __tablename__ = 'tinhthanh'
+    id = db.Column(Integer, primary_key=True)
+    ma = db.Column(String(255), unique=True)
+    ten = db.Column(String(255), nullable=False)
+    quocgia_id = db.Column(Integer, ForeignKey('quocgia.id'), nullable=False)
+    quocgia = db.relationship('QuocGia')

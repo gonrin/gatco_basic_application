@@ -4,6 +4,7 @@ from application.extensions import jinja
 
 def init_views(app):
     import application.controllers.user
+    import application.controllers.quocgia
 
     @app.route('/')
     def index(request):

@@ -7,7 +7,7 @@ define(function (require) {
     
     var navdata = require('app/bases/nav/route');
     var LoginView = require('app/bases/views/LoginView');
-    var QuocgiaCollectionView = require('app/view/quocgia/CollectionView');
+    var QuocgiaCollectionView = require('app/view/QuocGia/CollectionView');
     
     return Gonrin.Router.extend({
         routes: {
