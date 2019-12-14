@@ -1,0 +1,77 @@
+
+<div class="login">
+	<div class="logo">
+		
+	</div>
+	<!-- END LOGO -->
+	<!-- BEGIN LOGIN -->
+	<div class="content">
+		<!-- BEGIN LOGIN FORM -->
+		
+		<form class="login-form" id="login-form">
+			<div class="text-center">
+				<img src="static/images/logo_moitruongyte.png" style="width:100px;height:80px;margin:auto"/>
+			</div>
+			
+			<!-- <h3 class="form-title">Đăng nhập</h3> -->
+
+			
+			<div class="alert alert-danger collapse" style="display:none">
+				<button type="button" class="close" data-dismiss="alert" data-toggle="collapse" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<span>Enter any username and password. </span>
+			</div>
+			<div class="form-group  text-center">
+				<label class="control-label">Môi Trường Y Tế</label>
+			</div>
+			<div class="form-group  text-center">
+				<label class="control-label" id="msg_qrcode"></label>
+			</div>
+			<div class="form-group">
+				<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+				<label class="control-label visible-ie8 visible-ie9">Số Điện thoại hoặc Email</label>
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control form-control-solid placeholder-no-fix" autofocus type="text" name="username"/>
+			</div>
+			<div class="form-group">
+				<label class="control-label visible-ie8 visible-ie9">Mật khẩu</label>
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" name="password"/>
+			</div>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-success uppercase">Đăng nhập</button>
+				<label class="rememberme check">
+					<input type="checkbox" name="remember" value="1"/>Ghi nhớ </label>
+					<a href="javascript:void(0);" id="forget-password" class="forget-password">Bạn quên mật khẩu?</a>
+				</div>
+			<!-- <div class="form-group" >
+				<a href="javascript:void(0);" id="recover_account" class="btn btn-block btn-default">Quên mật khẩu HMIS</a>
+			</div> -->
+			<div class="form-group" style="display:none;">
+				<h4>Or login with</h4>
+				<ul class="social-icons">
+					<li>
+						<a id="loginfacebook" class="social-icon-color facebook" data-original-title="facebook" href="javascript:;"></a>
+					</li>
+					<!--<li>-->
+						<!--<a class="social-icon-color twitter" data-original-title="Twitter" href="javascript:;"></a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a class="social-icon-color googleplus g-signin2" data-original-title="Google Plus" href="javascript:;"></a>-->
+							<!--</li>-->
+						</ul>
+					</div>
+					<div class="create-account">
+						<p>
+							<!-- <a href="javascript:;" id="register-btn" class="uppercase">Tạo tài khoản</a> -->
+							<a href="javascript:void(0);" id="register-btn" class="uppercase">Tạo tài khoản</a>
+						</p>
+					</div>
+				</form>
+				<!-- END LOGIN FORM -->
+
+			</div>
+			<div class="copyright">
+				2019 © Môi trường y tế.
+			</div>
+
+		</div>

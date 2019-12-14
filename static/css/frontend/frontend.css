@@ -1,0 +1,84 @@
+body{
+	font-size: 12px;
+}
+
+@media all and (orientation:portrait) {
+	/* Style adjustments for portrait mode goes here */
+	body.ios{
+		padding-top:20px!important;
+	}
+}
+
+
+#tool{
+	height:30px;
+	background: #963019;
+	color: #FFFFFF;
+	padding-top:3px;
+}
+
+#logo{
+	padding: 0px;
+	max-height: 40px;
+	/*margin-top:-10px;*/
+}
+
+#menubar{
+	height:30px;
+	color: #000000;
+}
+
+.col.image{
+	max-height: 180px;
+	overflow: hidden;
+}
+
+.menubar-menu{
+	height:30px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 5px;
+}
+
+.menubar-menu a{
+	text-decoration: none;
+}
+
+.menubar-menu:hover{
+	background: #667467;
+}
+
+.menubar-menu:hover a{
+	color: #FFFFFF;
+}
+
+.menu-active{
+	background: #667467;
+}
+
+.menu-active a{
+	color: #FFFFFF;
+}
+
+.autofix.fix{
+	position: fixed !important;
+	top: auto;
+	bottom: 0;
+	left: 0;
+	right: auto;
+	width: 100%;
+	background:  #273746 ;
+	color:#FFFFFF;
+	z-index: 100000;
+	padding: 10px !important;
+}
+.autofix.fix button{
+	width: 100%;
+}
+/*.autofix.fix div{
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #e8e8f7;
+	margin: 5px
+}*/
