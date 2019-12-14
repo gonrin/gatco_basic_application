@@ -1,0 +1,51 @@
+{
+    "created_at": {
+        "type": "datetime"
+    },
+    "updated_at": {
+        "type": "datetime"
+    },
+    "deleted": {
+        "type": "boolean",
+        "default": false
+    },
+    "deleted_at": {
+        "type": "datetime"
+    },
+    "id": {
+        "type": "number",
+        "primary": true
+    },
+    "user_name": {
+        "type": "string",
+        "required": true,
+        "length": 255
+    },
+    "full_name": {
+        "type": "string",
+        "length": 255
+    },
+    "email": {
+        "type": "string",
+        "required": true,
+        "length": 255
+    },
+    "password": {
+        "type": "string",
+        "required": true,
+        "length": 255
+    },
+    "confirm_password": {
+        "type": "string",
+        "length": 255
+    },
+    "salt": {
+        "type": "string",
+        "required": true,
+        "length": 255
+    },
+    "is_active": {
+        "type": "boolean",
+        "default": true
+    }
+}

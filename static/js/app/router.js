@@ -5,7 +5,7 @@ define(function (require) {
     var $           = require('jquery'),
         Gonrin    	= require('gonrin');
     
-    var navdata = require('app/bases/nav/route');
+    var routedata = require('app/bases/nav/route');
     var LoginView = require('app/bases/views/LoginView');
     var QuocgiaCollectionView = require('app/view/QuocGia/CollectionView');
     
@@ -59,7 +59,7 @@ define(function (require) {
         },
         registerAppRoute: function(){
             var self = this;
-            $.each(navdata, function(idx, entry){
+            $.each(routedata, function(idx, entry){
                 var entry_path = _.result(entry,'route');
                 console.log(entry_path);
                 self.route(entry_path, entry.collectionName, function(){

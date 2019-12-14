@@ -29,7 +29,24 @@ define(function (require) {
 							self.getApp().getRouter().navigate(path);
 						}
 					},
-					
+					{
+						name: "print",
+						type: "button",
+						buttonClass: "btn-warning btn-sm",
+						label: "In ấn",
+						command: function(){
+							alert("User press print button")
+						}
+					},
+					{
+						name: "excel",
+						type: "button",
+						buttonClass: "btn-info btn-sm",
+						label: "In ấn",
+						command: function(){
+							alert("User press Xuất Excel")
+						}
+					},
 				]
 			},
 		],

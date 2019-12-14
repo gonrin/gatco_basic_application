@@ -1,0 +1,33 @@
+{
+    "created_at": {
+        "type": "datetime"
+    },
+    "updated_at": {
+        "type": "datetime"
+    },
+    "deleted": {
+        "type": "boolean",
+        "default": false
+    },
+    "deleted_at": {
+        "type": "datetime"
+    },
+    "id": {
+        "type": "number",
+        "primary": true
+    },
+    "role_name": {
+        "type": "string",
+        "required": true,
+        "length": 100
+    },
+    "display_name": {
+        "type": "string",
+        "required": true,
+        "length": 255
+    },
+    "description": {
+        "type": "string",
+        "length": 255
+    }
+}

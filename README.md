@@ -304,3 +304,9 @@ $ cd ../../
 ```
 
 ## Create login View
+
+## Generate JS Schema
+
+```
+$ python manage.py generate_schema
+```
