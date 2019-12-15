@@ -15,6 +15,28 @@ define(function (require) {
 			"collectionName":"tinhthanh",
 		    "route":"tinhthanh/collection"
 		},
+
+		{
+			"text":"Khách hàng",
+			"icon":"fa fa-child",
+			"type":"view",
+			"collectionName":"khachhang",
+		    "route":"khachhang/collection"
+		},
+		{
+			"text":"Hàng hoá",
+			"icon":"fa fa-child",
+			"type":"view",
+			"collectionName":"hanghoa",
+		    "route":"hanghoa/collection"
+		},
+		{
+			"text":"Hoá đơn",
+			"icon":"fa fa-child",
+			"type":"view",
+			"collectionName":"hoadon",
+		    "route":"hoadon/collection"
+		},
 		{
 			"text":"Hệ thống",
 			"icon":"fa fa-child",
