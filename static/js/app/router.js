@@ -61,7 +61,6 @@ define(function (require) {
             var self = this;
             $.each(routedata, function(idx, entry){
                 var entry_path = _.result(entry,'route');
-                console.log(entry_path);
                 self.route(entry_path, entry.collectionName, function(){
                     require([ entry['$ref'] ], function ( View) {
                         var view = new View({el: self.getApp().$content, viewData:entry.viewData});

@@ -68,17 +68,48 @@ define(function (require) {
     			this.model.set('id',id);
         		this.model.fetch({
         			success: function(data){
-        				self.applyBindings();
+						self.applyBindings();
+						self.calculateItemAmounts();
+						self.eventRegister();
         			},
         			error:function(){
     					self.getApp().notify("Get data Eror");
     				},
         		});
     		}else{
-    			self.applyBindings();
+				self.applyBindings();
+				self.calculateItemAmounts();
+				self.eventRegister();
     		}
     		
-    	},
+		},
+		
+		eventRegister: function(){
+			var self = this;
+			self.model.on("change:chitiethoadon", function () {
+				// check what be changed
+				console.log("chitiethoadon change", self.model.get("chitiethoadon"));
+				self.calculateItemAmounts();
+				
+			});
+		},
+
+		calculateItemAmounts: function(){
+			var self = this;
+			var thanhtien = 0;
+			for(var i = 0; i < self.model.get("chitiethoadon").length; i++){
+				console.log(self.model.get("chitiethoadon")[i]);
+				var thanhtien = parseInt(self.model.get("chitiethoadon")[i].thanhtien)  + thanhtien;
+			}
+			var vat = self.model.get("vat");
+			if (!vat){
+				vat = 0;
+			}
+
+			self.model.set("thanhtien", thanhtien);
+			var tongtien = thanhtien + (vat/100 * thanhtien);
+			self.model.set("tongtien", tongtien);
+		}
     });
 
 });

@@ -93,6 +93,10 @@ class HoaDon(CommonModel):
     tenkhachhang = db.Column(String(255))
     ngaymua = db.Column(DateTime)
 
+    thanhtien = db.Column(DECIMAL)
+    vat = db.Column(Integer, default=10)
+    tongtien = db.Column(DECIMAL)
+
     chitiethoadon = db.relationship("ChiTietHoaDon", order_by="ChiTietHoaDon.id", cascade="all, delete-orphan", lazy='dynamic')
 
 class ChiTietHoaDon(CommonModel):

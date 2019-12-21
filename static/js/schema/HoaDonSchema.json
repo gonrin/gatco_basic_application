@@ -35,6 +35,16 @@
     "ngaymua": {
         "type": "datetime"
     },
+    "thanhtien": {
+        "type": "number"
+    },
+    "vat": {
+        "default": 10,
+        "type": "number"
+    },
+    "tongtien": {
+        "type": "number"
+    },
     "chitiethoadon": {
         "type": "list"
     }
