@@ -10,7 +10,7 @@ MarkupSafe
 mimeparse
 python-dateutil
 PyYAML
-sanic==19.3.1
+sanic==20.12.6
 jinja2
 git+https://github.com/gonrin/gatco.git
 git+https://github.com/gonrin/gatco_auth.git
